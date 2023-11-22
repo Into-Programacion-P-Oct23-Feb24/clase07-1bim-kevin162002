@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author reroes
  */
-public class Ejemplo05 {
+public class Ejemplo051 {
     /**
      * @param args the command line arguments
      */
@@ -25,7 +25,7 @@ public class Ejemplo05 {
         int limite = 3;
         int contador = 1;
         double suma_total = 0;
-        
+        String mensajeFinal = "";
         double promedio_final;
         double calificacion;
         
@@ -37,12 +37,19 @@ public class Ejemplo05 {
                     + "número %d\n", contador);
             calificacion = entrada.nextDouble();
             suma_total = suma_total + calificacion;
+            mensajeFinal = String.format("%sCalificacion ingresada"
+                    + " %.2f\n", mensajeFinal,
+                    calificacion);
             // contador
             contador = contador + 1;
         }
         
         promedio_final = suma_total/limite;
-        System.out.printf("El promedio final es %f\n", promedio_final);
         
+        // System.out.printf("El promedio final es %f\n", promedio_final);
+        mensajeFinal = String.format("%s\n Promedio final %.2f\n",
+                mensajeFinal,
+                    promedio_final);
+        System.out.printf("%s\n", mensajeFinal);
     }
 }
